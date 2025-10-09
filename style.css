@@ -1,0 +1,530 @@
+/* --- ESTILOS GERAIS E RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+html {
+    scroll-behavior: smooth;
+    padding-top: 5px; 
+}
+
+body {
+    background-color: #FAFAFA;
+    color: #333;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #555;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.catalogo-secao {
+    padding-top: 50px; 
+}
+
+/* --- HEADER e MENU --- */
+header {
+    background-color: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #555;
+}
+
+.menu-principal ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu-principal li {
+    margin-left: 20px;
+}
+
+.menu-principal a {
+    font-weight: 400;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #CDB4DB;
+}
+
+.cta-menu {
+    background-color: #D9C7E8;
+    color: #333 !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* --- CARROSSEL (Estrutura e Setas) --- */
+.carousel-container {
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto 30px;
+    overflow: hidden;
+    height: 440px; 
+    text-align: center;
+    box-shadow:1px 2px 5px black ;
+    
+}
+
+.carousel-slide {
+    text-align: center;
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+    
+    
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; 
+    object-position: center 50%;
+    border-radius: 1%;
+    box-shadow: black 15px 15px;
+    
+}
+
+#img2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; 
+    object-position: center 5%;
+    
+    box-shadow: black 15px 15px;
+    
+}
+
+/* Estilo dos botões (setas) - NOVO CSS */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; 
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); 
+    border: none;
+    z-index: 10;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+/* --- BANNER PROMOCIONAL --- */
+.banner-promocional {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #FFF; 
+    margin-bottom: 40px;
+    border-top: 1px solid #eee;
+}
+
+.banner-promocional h2 {
+    font-size: 2.2em;
+    color: #CDB4DB;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.banner-promocional p {
+    color: #777;
+    margin: 5px 0;
+}
+
+.banner-cta {
+    display: inline-block;
+    background-color: #CDB4DB;
+    color: white;
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-weight: 600;
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+
+.banner-cta:hover {
+    background-color: #B29ACC;
+}
+
+/* --- CATÁLOGO DE PRODUTOS --- */
+.lista-produtos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* ESSENCIAL para corrigir o botão desalinhado */
+    align-items: stretch; 
+}
+
+.produto {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 250px; 
+    padding: 15px;
+    text-align: center;
+    
+    /* REGRAS CHAVE FLEXBOX PARA ALINHAMENTO DO BOTÃO */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.produto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.nome-produto {
+    font-size: 0.95em;
+    font-weight: 400;
+    color: #555;
+    /* REGRAS CHAVE AQUI: */
+    min-height: 75px; 
+    margin-bottom: 10px; /* Adiciona um respiro abaixo do nome */
+    width: 100%;
+}
+
+.preco-info {
+    margin: 10px 0 15px; /* Define o espaçamento vertical */
+    line-height: 1.4;
+    width: 100%; /* Ocupa 100% da largura do card */
+    text-align: center; /* Garante que o texto de preço esteja centralizado */
+}
+.preco-pix {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+}
+
+.parcela {
+    display: block;
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* Botão COMPRAR - TRUQUE FINAL */
+.botao-whatsapp {
+    display: block;
+    background-color: #B5A599; 
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    width: 100%; /* Ocupa 100% da largura do card para melhor clique */
+    
+    /* ESSENCIAL: Empurra o botão para a base do card */
+    margin-top: auto; 
+}
+
+.botao-whatsapp:hover {
+    background-color: #9A897B; 
+}
+
+
+/* --- COLEÇÕES EM CÍRCULO --- */
+.colecoes-em-circulo {
+    padding: 40px 20px;
+    background-color: white;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.lista-colecoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.item-colecao a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-colecao img {
+    width: 70px; 
+    height: 70px;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 5px;
+    border: 1px solid #eee; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.item-colecao span {
+    font-size: 0.8em;
+    text-transform: lowercase;
+}
+
+
+/* --- ESTILOS PARA EFEITO HOVER DE IMAGEM --- */
+
+.container-imagens {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Mesma altura que a imagem tinha antes */
+    overflow: hidden; /* Esconde qualquer parte das imagens que extrapole */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.container-imagens img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out; /* Adiciona uma transição suave */
+}
+
+/* 1. Visibilidade padrão */
+.img-verso {
+    opacity: 0; /* Esconde a imagem de verso por padrão */
+}
+
+/* 2. Efeito no HOVER (quando o mouse está sobre o card) */
+.produto:hover .img-frente {
+    opacity: 0; /* Esconde a imagem da frente */
+}
+
+.produto:hover .img-verso {
+    opacity: 1; /* Mostra a imagem de verso */
+}
+
+/* Remova a regra antiga: Remova a altura da imagem da regra .produto img */
+/* Certifique-se de que a regra .produto img NÃO EXISTA MAIS no seu CSS */
+
+/* --- FOOTER E OUTROS --- */
+/* --- FOOTER ELABORADO --- */
+footer {
+    background-color: #333333;
+    color: #f4f4f4;
+    padding-top: 50px;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    
+    /* AS REGRAS CHAVE QUE ESTÃO FALTANDO OU FORAM APAGADAS: */
+    display: flex; /* ESSENCIAL! Define o layout em colunas */
+    justify-content: space-between; /* Espalha as colunas */
+    flex-wrap: wrap; /* Permite quebrar em telas menores (mobile) */
+    gap: 30px;
+}
+
+.footer-col {
+    flex: 1; /* Permite que as colunas cresçam */
+    min-width: 250px; 
+}
+
+/* ... o restante do CSS do footer (h4, ul, li, etc.) ... */
+
+/* --- MOBILE OPTIMIZATIONS (MEDIA QUERIES) --- */
+@media (max-width: 768px) {
+    /* Menu Simples para Mobile */
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+    .menu-principal ul {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .menu-principal li {
+        margin: 5px 0;
+    }
+
+    /* Produtos em duas colunas */
+    .lista-produtos {
+        gap: 10px; 
+    }
+    .produto {
+        width: 48%; 
+        padding: 10px;
+    }
+    .produto img {
+        height: 150px; 
+    }
+
+    /* Ajustes de Altura para Mobile */
+    .carousel-container {
+        height: 250px;
+    }
+    .carousel-slide img {
+        height: 250px;
+    }
+    .banner-promocional h2 {
+        font-size: 1.5em;
+    }
+    
+    /* Footer em coluna */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        min-width: 100%;
+        margin-bottom: 25px;
+    }
+    .redes-sociais {
+        justify-content: center;
+    }
+}
+
+/* --- Lightbox / Lupa de Detalhes --- */
+.lightbox {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixado na tela */
+    z-index: 9999; /* Fica acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa a largura total */
+    height: 100%; /* Ocupa a altura total */
+    overflow: auto; /* Permite scroll se a imagem for muito grande */
+    background-color: rgba(0,0,0,0.8); /* Fundo escuro semi-transparente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+}
+
+.conteudo-lightbox {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Limita a largura máxima da imagem */
+    max-height: 90%; /* Limita a altura máxima da imagem */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    animation-name: zoom; /* Animação ao abrir */
+    animation-duration: 0.6s;
+}
+
+.fechar-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.fechar-lightbox:hover,
+.fechar-lightbox:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animação de Zoom */
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+}
+
+/* Para telas menores, ajusta o tamanho da imagem no lightbox */
+@media (max-width: 768px) {
+    .conteudo-lightbox {
+        width: 95%; /* Ocupa mais largura em mobile */
+        max-height: 85%;
+        object-position: center 70%; 
+        height: 150px;
+        width: 150px;
+
+    }
+}
+
+#img2{
+    width: 100%;
+}
+
+
+/* --- Estilos para as Setas de Navegação do Lightbox --- */
+.prev-lightbox, .next-lightbox {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; 
+    color: white;
+    font-weight: bold;
+    font-size: 30px; 
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); 
+    border-radius: 50%; /* Transforma o botão em círculo */
+    z-index: 10000; /* Garante que fique acima de tudo */
+}
+
+.next-lightbox {
+    right: 20px;
+}
+
+.prev-lightbox {
+    left: 20px;
+}
+
+.prev-lightbox:hover, .next-lightbox:hover {
+    background-color: rgba(0,0,0,0.8);
+}
