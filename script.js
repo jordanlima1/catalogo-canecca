@@ -1,5 +1,5 @@
 // URL do WhatsApp para envio da comanda
-const WHATSAPP_URL = "https://wa.me/5599999999999?text="; // ⚠️ MUDAR PARA SEU NÚMERO
+const WHATSAPP_URL = "https://wa.me/5521971803164?text="; // ⚠️ MUDAR PARA SEU NÚMERO
 const ENDERECO_RETIRADA = "Rua das Canecas, 123 - Centro, RJ (Referência: Próximo à Praça Principal)"; // ⚠️ ENDEREÇO DA SUA LOJA
 let carrinho = [];
 
@@ -348,3 +348,4 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";  
 } 
 const intervalCarrossel = setInterval(() => plusSlides(1), 5000);
+
