@@ -1,6 +1,6 @@
 // URL do WhatsApp para envio da comanda
 const WHATSAPP_URL = "https://wa.me/5521971803164?text="; // ⚠️ MUDAR PARA SEU NÚMERO
-const ENDERECO_RETIRADA = "Travessa Peloponeso, 38 - Bangu/Vila-Kennedy, RJ (Referência: Próximo à Praça Principal)"; // ⚠️ ENDEREÇO DA SUA LOJA
+const ENDERECO_RETIRADA = "Travessa Peloponeso, 38 - Bangu/Vila-Kennedy, RJ (Referência: Próximo à Praça praça do galo)"; // ⚠️ ENDEREÇO DA SUA LOJA
 let carrinho = [];
 
 // --- FUNÇÕES DE INICIALIZAÇÃO ---
@@ -213,18 +213,16 @@ function finalizarPedidoWhatsapp() {
     }
 
     let listaItens = "";
-    let descontoPix = 0;
+    // DESCONTO PIX: AGORA É SEMPRE 0%
+    const descontoPix = 0;
     
-    if (pagamento === 'Pix') {
-        descontoPix = totalPedidoNumerico * 0.10;
-        listaItens += `*⚠️ Desconto de 10% aplicado para PIX no fechamento ⚠️*\n`;
-    }
+    // Removido o aviso de desconto, pois agora é 0%
 
     carrinho.forEach((item, index) => {
         listaItens += `${index + 1}. ${item.nome} x${item.quantidade} (Subtotal: R$ ${formatarMoeda(item.preco * item.quantidade)})\n`;
     });
     
-    const totalFinal = (totalPedidoNumerico - descontoPix);
+    const totalFinal = totalPedidoNumerico; // Total final é igual ao subtotal, pois não há desconto.
 
     const mensagem = `
 *PEDIDO #CANECCACOMHISTORIA - ONLINE*
@@ -241,7 +239,7 @@ ${listaItens}
 --------------------------------------------------------------------------------
 💰 *RESUMO DA COMPRA*
 Total dos Produtos: R$ ${formatarMoeda(totalPedidoNumerico)}
-Desconto PIX: R$ ${formatarMoeda(descontoPix)}
+Desconto PIX: R$ 0,00
 *TOTAL FINAL: R$ ${formatarMoeda(totalFinal)}*
 Forma de Pagamento: ${pagamento}
 --------------------------------------------------------------------------------
